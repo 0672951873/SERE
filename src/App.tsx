@@ -8,6 +8,7 @@ type Product = {
   family: 'Eau de parfum' | 'Extrait de parfum'
   price: number
   image: string
+  brand?: string
   label?: string
 }
 
@@ -44,7 +45,44 @@ const products: Product[] = [
     notes: 'Fig leaf · amber · sandalwood',
     family: 'Extrait de parfum',
     price: 240,
-    image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=900&q=85',
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    id: 5,
+    name: '9PM Night Out',
+    notes: 'Dragon fruit · cognac · suede',
+    family: 'Extrait de parfum',
+    price: 85,
+    image: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85',
+    brand: 'Afnan',
+    label: 'New',
+  },
+  {
+    id: 6,
+    name: 'Supremacy Not Only Intense',
+    notes: 'Blackcurrant · oakmoss · ambergris',
+    family: 'Eau de parfum',
+    price: 95,
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85',
+    brand: 'Afnan',
+  },
+  {
+    id: 7,
+    name: 'Born in Roma Donna',
+    notes: 'Blackcurrant · jasmine · bourbon vanilla',
+    family: 'Eau de parfum',
+    price: 165,
+    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85',
+    brand: 'Valentino',
+  },
+  {
+    id: 8,
+    name: 'Uomo Born in Roma Intense',
+    notes: 'Vanilla · lavandin · vetiver',
+    family: 'Eau de parfum',
+    price: 165,
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85',
+    brand: 'Valentino',
   },
 ]
 
@@ -169,7 +207,7 @@ function App() {
                 </div>
                 <div className="product-details">
                   <div>
-                    <p className="product-family">{product.family}</p>
+                    <p className="product-family">{product.brand ? `${product.brand} · ` : ''}{product.family}</p>
                     <h3>{product.name}</h3>
                     <p className="product-notes">{product.notes}</p>
                   </div>
